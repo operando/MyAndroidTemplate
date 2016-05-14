@@ -10,6 +10,8 @@ android {
     compileSdkVersion 23
     buildToolsVersion "24.0.0 rc2"
 
+    publishNonDefault true
+
     defaultConfig {
         applicationId "com.os.operando.myandroidtemplate"
         minSdkVersion 17
@@ -62,9 +64,11 @@ dependencies {
     apt 'com.rejasupotaro:kvs-schema-compiler:5.0.0'
     compile 'com.rejasupotaro:kvs-schema:5.0.0'
 
+    // Instrumentation test dependencies
+    androidTestCompile project(':AndroidTestCommon')
+
     testCompile 'junit:junit:4.12'
 }
-
 buildtimetracker {
     reporters {
         csv {
