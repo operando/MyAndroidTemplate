@@ -11,6 +11,9 @@ import com.google.gson.annotations.SerializedName;
 import com.jakewharton.rxbinding.widget.RxTextView;
 import com.os.operando.myandroidtemplate.databinding.ActivityMainBinding;
 
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.Period;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -94,6 +97,11 @@ public class MainActivity extends AppCompatActivity {
 
         Timber.tag("LifeCycles");
         Timber.d("Activity Created");
+
+        LocalDateTime localDateTime = LocalDateTime.now().minusMonths(2).plusDays(4);
+        LocalDateTime localDateTime1 = LocalDateTime.now();
+        Period period = Period.between(localDateTime.toLocalDate(), localDateTime1.toLocalDate());
+        Timber.d("date : " + period.getMonths());
     }
 
     class RequestHeaderInterceptor implements Interceptor {
