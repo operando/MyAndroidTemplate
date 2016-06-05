@@ -26,9 +26,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
-import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -90,23 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
         retrofit.create(IWhetherApi.class).getWhether(path, id, appId)
                 .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<WetherResponse>() {
-                    @Override
-                    public void onCompleted() {
+                .observeOn(AndroidSchedulers.mainThread());
 
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onNext(WetherResponse wetherResponse) {
-                        Log.d("next", String.valueOf(wetherResponse.main.tempMin));
-                    }
-                });
+        Timber.tag("LifeCycles");
+        Timber.d("Activity Created");
     }
 
     class RequestHeaderInterceptor implements Interceptor {
