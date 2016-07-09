@@ -5,6 +5,7 @@ apply plugin: 'com.vanniktech.android.apk.size'
 apply plugin: "build-time-tracker"
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'android-apt'
+apply plugin: 'com.jakewharton.hugo'
 
 android {
     compileSdkVersion 24

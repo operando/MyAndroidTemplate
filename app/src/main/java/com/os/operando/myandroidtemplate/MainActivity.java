@@ -102,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
         LocalDateTime localDateTime1 = LocalDateTime.now();
         Period period = Period.between(localDateTime.toLocalDate(), localDateTime1.toLocalDate());
         Timber.d("date : " + period.getMonths());
+
+        HugoTest.test(100, "test");
     }
 
     class RequestHeaderInterceptor implements Interceptor {
