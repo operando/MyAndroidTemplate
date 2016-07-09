@@ -2,11 +2,11 @@ apply plugin: 'com.android.test'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "24.0.0 rc2"
+    buildToolsVersion "24.0.0"
 
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 23
+        targetSdkVersion 24
         testApplicationId "com.os.operando.myandroidtemplate.test"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

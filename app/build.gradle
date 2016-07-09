@@ -7,15 +7,15 @@ apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'android-apt'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
 
     publishNonDefault true
 
     defaultConfig {
         applicationId "com.os.operando.myandroidtemplate"
         minSdkVersion 17
-        targetSdkVersion 23
+        targetSdkVersion 24
         versionCode 1
         versionName "${project.version_major}.${project.version_minor}.${project.version_patch}"
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
